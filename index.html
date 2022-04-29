@@ -1,12 +1,171 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>HOFDLA</title>
+     <!--BULMA-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+     <!--BULMA CSS-->
+    <link rel="stylesheet" href="css/mystyles.css">
+     <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+  </head>
+  <body>
+
+    <!--NAVBAR-->
+  <section class="section">
+    <div class="container">
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand navbar-start">
+              <a class="navbar-item">
+               <h2 class="title is-3"> HOFDLA</h2>
+              </a>
+            </div>
+          
+            <div id="navbar" class="navbar-menu">
+              <div class="navbar-end">
+                <a class="navbar-item">
+                  ABOUT
+                </a>
+          
+                <a class="navbar-item">
+                  COMPARE
+                </a>
+          
+                 <a class="navbar-item">
+                    CRYPTO INFO
+                </a>
+            </div>
+        </nav>
+    </div>
+  </section>
+
+<!--HERO SECTION WITH MONKEY IMAGE-->
+  <section class="section hero is-small">
+      <div class="hero-body">
+        <figure class="image is-square">
+            <img src="Asset 3.svg" >
+        </figure>  
+      </div>
+  </section>
+
+  <!--ABOUT SECTION-->
+  <section class="box has-background-link has-text-white" id="about">
+      <div class="content has-text-white">
+        <h2 class="has-text-centered has-text-white"><em>READY TO GO TO THE MOON?</em></h2>
+        <p> Cryptocurrency can be intimidating, but we are here to help! Get ready to dive into the basics of crypto and comparing top stock market values against cryptocurrency...so you too can go to the <em>Moon</em>.</p>
+        <h3 class="has-text-white">Here are the top terms you need to know:</h3>
+          <p><strong class="has-text-white">Current Price:</strong> Definition</p>
+          <p><strong class="has-text-white">Price Change In 24HR:</strong> Definition</p>
+          <p><strong class="has-text-white">Percent Change In 24HR:</strong> Definition</p>
+          <p><strong class="has-text-white">Market Cap:</strong> Definition</p>
+      </div>
+  </section>
+
+  <!--CRYPTO VS STOCKS COMPARISON-->
+  <section class="box has-background-link" id="crypto-stocks">
+      <div class="container">
+          <h2 class="title is-2 has-text-centered has-text-white">
+              COMPARE
+          </h2>
+          <div class="columns is-mobile">
+              <div class="column">
+                <div class="dropdown">
+                    <div class="dropdown-trigger">
+                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+                        <span>Top 5 Cryptocurrencies</span>
+                        <span class="icon is-small">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="dropdown-menu" id="crypto-dropdown" role="menu">
+                      <div class="dropdown-content">
+                        <a href="#" class="dropdown-item">
+                          Bitcoin
+                        </a>
+                        <a href="#" class="dropdown-item">
+                          Ethereum
+                        </a>
+                        <a href="#" class="dropdown-item">
+                          Binance
+                        </a>
+                        <a href="#" class="dropdown-item">
+                          Solana
+                        </a>
+                        <a href="#" class="dropdown-item">
+                          XRP
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="column">
+                <div class="dropdown">
+                    <div class="dropdown-trigger">
+                      <button class="button" aria-haspopup="true" aria-controls="dropdown-menu3">
+                        <span>Top 5 Stock Markets</span>
+                        <span class="icon is-small">
+                          <i class="fas fa-angle-down" aria-hidden="true"></i>
+                        </span>
+                      </button>
+                    </div>
+                    <div class="dropdown-menu" id="stock-dropdown" role="menu">
+                      <div class="dropdown-content">
+                        <a href="#" class="dropdown-item">
+                          THE DOW
+                        </a>
+                        <a href="#" class="dropdown-item">
+                          S&Q
+                        </a>
+                        <a href="#" class="dropdown-item">
+                          NASDAQ
+                        </a>
+                        <a href="#" class="dropdown-item">
+                          Amazon
+                        </a>
+                        <a href="#" class="dropdown-item">
+                          Tesla
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+          </div>
+      </div>
+  </section>
+
+   <!--CRYPTO EDUCATION & NEWS-->
+  <section class="box has-background-link" id="education">
+    <div class="container">
+        <h2 class="title is-2 has-text-centered has-text-white">
+            EDUCATION
+        </h2>
+        <div class="columns is-mobile">
+            <div class="column" id="crypto-education">
+                <h3 class="subtitle is-4 has-text-centered has-text-white">
+                  Crypto Education
+                </h3>
+              
+            </div>
+            <div class="column" id="crypto-news">
+                <h3 class="subtitle is-4 has-text-centered has-text-white">
+                    Crypto News
+                </h3>
+          </div>
+        </div>
+    </div>
+</section>
+
+ <!--FOOTER-->
+<footer class="footer">
+    <div class="content has-text-centered has-text-white">
+      <p>
+        <strong>Hold On For Dear Life Ape 2022. </strong> <br> <a href="https://"> By The KAVDA Team.</a>
+      </p>
+    </div>
+  </footer>
+
+  </body>
 </html>
