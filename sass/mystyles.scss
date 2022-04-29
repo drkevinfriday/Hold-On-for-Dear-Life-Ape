@@ -1,2 +1,18 @@
 @charset "utf-8";
-@import "assets/mybulma/bulma/bulma.sass";
+
+// Set HOFDLA brand colors
+$purple: #27116A;
+$blue: #5CB5E9;
+$grey: #E1DFDD;
+
+// Update Bulma's global variables
+$background-link: $purple;
+$text-white: $blue;
+$widescreen-enabled: false;
+$fullhd-enabled: false;
+
+
+// Import only what you need from Bulma
+@import "~mybulma/bulma/sass/utilities/_all.sass";
+
+
