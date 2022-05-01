@@ -1,5 +1,9 @@
 //Domelments
 var coinNameEl = document.querySelector(".coinName")
+var PriceEl = document.querySelector(".coinPrice")
+var marketcapEl = document.querySelector(".coinMcap")
+var dailyChgEl = document.querySelector(".coinDayChg")
+var DailyPercentEl = document.querySelector(".coinPrecentChange")
 var showNameEl = document.querySelector(".showName")
 
 
@@ -44,10 +48,17 @@ var displayArray = function(){
 	
 	console.log("click works")
 
+
 	for(var i=0; i< coinArray.length; i++){
 		console.log(coinArray[i])
 
+
 	}
+	coinNameEl.textContent=coinArray[0].name
+	PriceEl.textContent=coinArray[0].price
+	marketcapEl.textContent=coinArray[0].marketCap
+	dailyChgEl.textContent=coinArray[0].dailyChg
+	DailyPercentEl.textContent=coinArray[0].dailyChgPer
 
 }
 
@@ -118,15 +129,15 @@ fetch('https://coingecko.p.rapidapi.com/coins/markets?vs_currency=usd&page=1&per
 		
 		
 		// click event
+		showNameEl.addEventListener("click", displayArray)
 		
 		
-		showNameEl.addEventListener("click", displayArray())
 	});
 
 
 
 // coinNameEl.addEventListener("click", displayArray)
-// showNameEl.addEventListener("click", displayArray)
+
 
 
 	
