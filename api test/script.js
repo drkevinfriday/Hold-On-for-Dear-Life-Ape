@@ -1,14 +1,46 @@
 //Domelments
 
-coinNameEL = document.querySelector("coinName")
 
 
-var coinArray = []
+
+var coinArray = [];
+
+var testArray = [];
+
+let myObject= {}
 
 
-//  list of objects
 
 
+// this function creates objcts from the api call and pushes them to the coin array
+
+var createobj = function(assetInfo){
+
+// create an object for api call info
+
+
+
+
+let myObject= {}
+
+	
+	myObject.name = assetInfo.name;
+	myObject.price = assetInfo.current_price;
+	myObject.dailyChgPer = assetInfo.price_change_percentage_24h;
+	myObject.dailyChg = assetInfo.price_change_24h;
+	myObject.marketCap = assetInfo.market_cap;
+
+
+	// coinArray.push(myObject)
+	return myObject
+
+
+}
+
+var displayArray = function(array){
+for (var i = 0; i < array.length; i++){
+console.log(array[i])
+}}
 
 
 const options = {
@@ -31,58 +63,38 @@ fetch('https://coingecko.p.rapidapi.com/coins/markets?vs_currency=usd&page=1&per
 			if(data[i].name=='Bitcoin'){
 				// console.log(data[i]);
 				// sends data to create obj function that pushes the info to the coin array
-				createobj(data[i])			
+				
+				coinArray.push(createobj(data[i]))			
 			}	
 			// test for Ethereum and returns the data
 			if(data[i].name=='Ethereum'){
 				// console.log(data[i]);
-				createobj(data[i])							
+				coinArray.push(createobj(data[i]))							
 			}	
 			// // test for BNB and returns the data
 			if(data[i].name=='BNB'){
 				// console.log(data[i]);
-				createobj(data[i]);						
+				coinArray.push(createobj(data[i]))						
 			}	
 			// test for Solana and returns the data
 			if(data[i].name=='Solana'){
 				// console.log(data[i]);
-				createobj(data[i])			
+				coinArray.push(createobj(data[i]))		
 			}
 			// // test for XRP and returns the data	
 			if(data[i].name=='XRP'){
 				// console.log(data[i]);
-				createobj(data[i])											
-			}		  	
-		}	
+				coinArray.push(createobj(data[i]))											
+			}	
+		}			
+		displayArray(coinArray)
+		console.log(coinArray)
+
+
+
+	
 	});
-
-// this function creates objcts from the api call and pushes them to the coin array
-var createobj = function(assetInfo){
-
-	var coinName = assetInfo.name
-				console.log(assetInfo.name);
-
-								// console.log("Price: " + assetInfo.current_price);				
-								// console.log("Daily Change %:" + assetInfo.price_change_percentage_24h);		
-								// console.log("Daily Change  :" + assetInfo.price_change_24h);		
-								// console.log("Market Cap :" + assetInfo.market_cap);
-		// create an object for api call info
-				coinName= {
-					name: assetInfo.name,
-					price: assetInfo.current_price,
-					dailyChgPer: assetInfo.price_change_percentage_24h,
-					dailyChg: assetInfo.price_change_24h,
-					marketCap:assetInfo.market_cap
-
-				}
-				coinArray.push(coinName)
-
-
-}
-
-console.log(coinArray)
-
-
+	console.log(coinArray)
 
 	
 
