@@ -96,5 +96,6 @@ fetch('https://coingecko.p.rapidapi.com/coins/markets?vs_currency=usd&page=1&per
 	});
 	console.log(coinArray)
 
+
 	
 
