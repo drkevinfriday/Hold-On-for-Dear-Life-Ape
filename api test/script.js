@@ -1,13 +1,15 @@
 //Domelments
+var coinNameEl = document.querySelector(".coinName")
+var showNameEl = document.querySelector(".showName")
 
 
 
-
+//list of arrays
 var coinArray = [];
 
 var testArray = [];
 
-let myObject= {}
+
 
 
 
@@ -23,7 +25,7 @@ var createobj = function(assetInfo){
 
 let myObject= {}
 
-	
+	// this sets the  new object values 
 	myObject.name = assetInfo.name;
 	myObject.price = assetInfo.current_price;
 	myObject.dailyChgPer = assetInfo.price_change_percentage_24h;
@@ -32,14 +34,26 @@ let myObject= {}
 
 
 	// coinArray.push(myObject)
+	// this returns the object to calling function to be pushed up to the coin array.
 	return myObject
 
 
 }
 
-var displayArray = function(array){
-for (var i = 0; i < array.length; i++){
-console.log(array[i])
+var displayArray = function(){
+	
+	console.log("click works")
+
+	for(var i=0; i< coinArray.length; i++){
+		console.log(coinArray[i])
+
+	}
+
+}
+
+var testCoin = function(){
+	for(var i=0; i< array.length; i++){
+		console.log(array[i])
 }}
 
 
@@ -86,15 +100,33 @@ fetch('https://coingecko.p.rapidapi.com/coins/markets?vs_currency=usd&page=1&per
 				// console.log(data[i]);
 				coinArray.push(createobj(data[i]))											
 			}	
-		}			
-		displayArray(coinArray)
+		}
+		
+		//
+		// displayArray(coinArray)
 		console.log(coinArray)
+		// console.log(coinArray[0])
+
+		// condiontal statement test for type of coin needed
 
 
+		
 
-	
+
+		// display the info from selected coin to hmtl page.
+		
+		
+		
+		// click event
+		
+		
+		showNameEl.addEventListener("click", displayArray())
 	});
-	console.log(coinArray)
+
+
+
+// coinNameEl.addEventListener("click", displayArray)
+// showNameEl.addEventListener("click", displayArray)
 
 
 	
