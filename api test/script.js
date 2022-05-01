@@ -45,27 +45,29 @@ let myObject= {}
 }
 
 var displayArray = function(){
-	
+	//  this confirms that the button works
 	console.log("click works")
 
-
+	// this cycles through the coin array as a test
 	for(var i=0; i< coinArray.length; i++){
 		console.log(coinArray[i])
-
-
 	}
-	coinNameEl.textContent=coinArray[0].name
-	PriceEl.textContent=coinArray[0].price
-	marketcapEl.textContent=coinArray[0].marketCap
-	dailyChgEl.textContent=coinArray[0].dailyChg
-	DailyPercentEl.textContent=coinArray[0].dailyChgPer
+
+	// once the button is pressed the info from the array based on the index is displayed on the screen
+	// currently the index is 0 or just bitcoin  we need a conditional statment made to set the index based on the user selection from the user select function
+	//  we would have to make a button for each coin doing it this way
+	coinNameEl.textContent=("Asset Name: " + coinArray[0].name);
+	PriceEl.textContent=("Price: " + coinArray[0].price);
+	marketcapEl.textContent=("Market cap: " + coinArray[0].marketCap)
+	dailyChgEl.textContent=("Daily Change: " + coinArray[0].dailyChg)
+	DailyPercentEl.textContent=("Daily % Change: " + coinArray[0].dailyChgPer)
 
 }
-
-var testCoin = function(){
-	for(var i=0; i< array.length; i++){
-		console.log(array[i])
-}}
+// this function was planned to be used to return selection from the drop down menu 
+// that selection would then be sent to the display function to display the choosen coin.
+var userSelect  = function(){
+	
+}
 
 
 const options = {
@@ -113,19 +115,9 @@ fetch('https://coingecko.p.rapidapi.com/coins/markets?vs_currency=usd&page=1&per
 			}	
 		}
 		
-		//
-		// displayArray(coinArray)
+		//test the array at the end
 		console.log(coinArray)
-		// console.log(coinArray[0])
-
-		// condiontal statement test for type of coin needed
-
-
-		
-
-
-		// display the info from selected coin to hmtl page.
-		
+	
 		
 		
 		// click event
@@ -136,7 +128,7 @@ fetch('https://coingecko.p.rapidapi.com/coins/markets?vs_currency=usd&page=1&per
 
 
 
-// coinNameEl.addEventListener("click", displayArray)
+
 
 
 
