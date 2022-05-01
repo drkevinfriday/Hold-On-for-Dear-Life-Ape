@@ -7,30 +7,88 @@ const options = {
 };
 
 fetch('https://finshorts.p.rapidapi.com/index.php?q=aapl', options)
-	.then(response => response.json())
-	.then(response => console.log(response))
-	.catch(err => console.error(err));
+.then(function (response) {
+    return response.json();
+})
+.then(function(data){
+    console.log(data.data)
+
+    console.log(data.data.symbol)
+    console.log("DAily Change:  " + data.data.change)
+    console.log("DAily % Change:  " + data.data.changePercent)
+    console.log("price: " + data.data.latestPrice)
+    console.log("MarketCap: " + data.data.marketCap + "USD")
+
+    
+
+})
+   
+    
 
 fetch('https://finshorts.p.rapidapi.com/index.php?q=Tsla', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data.data)
 
+        console.log(data.data.symbol)
+        console.log("DAily Change:  " + data.data.change)
+        console.log("DAily % Change:  " + data.data.changePercent)
+        console.log("price: " + data.data.latestPrice)
+        console.log("MarketCap: " + data.data.marketCap + "USD")
+
+        
+
+    })
 fetch('https://finshorts.p.rapidapi.com/index.php?q=dow', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data.data)
 
+        console.log(data.data.symbol)
+        console.log("DAily Change:  " + data.data.change)
+        console.log("DAily % Change:  " + data.data.changePercent)
+        console.log("price: " + data.data.latestPrice)
+        console.log("MarketCap: " + data.data.marketCap + "USD")
+
+        
+
+    })
 fetch('https://finshorts.p.rapidapi.com/index.php?q=amzn', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
-    
-fetch('https://finshorts.p.rapidapi.com/index.php?q=sp', options)
-    .then(response => response.json())
-    .then(response => console.log(response))
-    .catch(err => console.error(err));
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data.data)
 
+        console.log(data.data.symbol)
+        console.log("DAily Change:  " + data.data.change)
+        console.log("DAily % Change:  " + data.data.changePercent)
+        console.log("price: " + data.data.latestPrice)
+        console.log("MarketCap: " + data.data.marketCap + "USD")
+
+        
+
+    }) 
+fetch('https://finshorts.p.rapidapi.com/index.php?q=sp', options)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function(data){
+        console.log(data.data)
+
+        console.log(data.data.symbol)
+        console.log("DAily Change:  " + data.data.change)
+        console.log("DAily % Change:  " + data.data.changePercent)
+        console.log("price: " + data.data.latestPrice)
+        console.log("MarketCap: " + data.data.marketCap + "USD")
+
+        
+
+    })
 
 
 
