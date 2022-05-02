@@ -1,4 +1,4 @@
-//Domelments
+//Dom elements
 var coinNameEl = document.querySelector(".coinName")
 var PriceEl = document.querySelector(".coinPrice")
 var marketcapEl = document.querySelector(".coinMcap")
