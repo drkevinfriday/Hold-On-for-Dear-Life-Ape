@@ -126,7 +126,7 @@ fetch('https://coingecko.p.rapidapi.com/coins/markets?vs_currency=usd&page=1&per
 		showNameEl.addEventListener("click", displayArray)
 
 		// TESTING HERE: CODE WORKS ON BUTTON CLICK 
-		
+
 // function displaying crypto info 
 // added parameters to function to display corresponding info 
 
@@ -171,11 +171,21 @@ var handleBtnClick = function(event) {
 
 	});
 
+	// TESTING SHOW/HIDE DROPDOWN
+	var dropdownTrigger = document.querySelectorAll(".dropdown-trigger");
 
-
-
-
-
-
-	
+    dropdownTrigger.forEach(function (trigger) {
+    var isopen = false;
+    trigger.addEventListener('click', function () {
+        if (isopen) {
+            trigger.parentElement.classList.remove("is-active");
+            isopen = false;
+        } else {
+            trigger.parentElement.classList.add("is-active");
+            isopen = true;
+        }
+    // click event
+    cryptoDropdownEl.addEventListener("click", dropdownTrigger);
+    })
+});
 
