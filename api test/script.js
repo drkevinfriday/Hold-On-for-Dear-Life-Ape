@@ -5,7 +5,9 @@ var marketcapEl = document.querySelector(".coinMcap")
 var dailyChgEl = document.querySelector(".coinDayChg")
 var DailyPercentEl = document.querySelector(".coinPrecentChange")
 var showNameEl = document.querySelector(".showName")
-
+//domelements used to display info 
+var cryptoBtnEl = document.querySelector("#Bitcoin")
+var listInfo = document.querySelector("ul")
 
 
 //list of arrays
@@ -122,8 +124,27 @@ fetch('https://coingecko.p.rapidapi.com/coins/markets?vs_currency=usd&page=1&per
 		
 		// click event
 		showNameEl.addEventListener("click", displayArray)
+
+		// function for displaying bitcoin info
+var bitcoinClick = function() {
+		// this cycles through the coin array as a test
+		for(var i=0; i< coinArray.length; i++){
+		//console.log(coinArray[i])
+		}
+			if (coinArray[0].name == 'Bitcoin') {
+				console.log(coinArray[0])
+								
+				//creates li element to display info
+				var listItem = document.createElement('li');
 		
-		
+				// this sets the info that will be displayed
+				listItem.textContent = ("Asset Name: " + coinArray[0].name);
+						
+				// Appends the list items to the parent ul
+				listInfo.appendChild(listItem);
+				}    
+			}
+			cryptoBtnEl.addEventListener("click", bitcoinClick);
 	});
 
 
