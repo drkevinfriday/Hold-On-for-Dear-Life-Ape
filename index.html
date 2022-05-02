@@ -13,7 +13,7 @@
   </head>
   <body class="has-background-grey-lighter">
 
-    <!--NAVBAR OPTIONAL-->
+ <!--NAVBAR OPTIONAL-->
  <!-- <section class="section">
     <div class="container">
         <nav class="navbar" role="navigation" aria-label="main navigation">
@@ -56,10 +56,12 @@
         <h2 class="has-text-centered has-text-grey-lighter"><em>READY TO GO TO THE MOON?</em></h2>
         <p> Cryptocurrency can be intimidating, but we are here to help! Get ready to dive into the basics of crypto and comparing top stock market values against cryptocurrency...so you too can go to the <em>Moon</em>.</p>
         <h3 class="has-text-grey-lighter">Here are the top terms you need to know:</h3>
-          <p><strong class="has-text-grey-lighter">Current Price:</strong> Definition</p>
-          <p><strong class="has-text-grey-lighter">Price Change In 24HR:</strong> Definition</p>
-          <p><strong class="has-text-grey-lighter">Percent Change In 24HR:</strong> Definition</p>
-          <p><strong class="has-text-grey-lighter">Market Cap:</strong> Definition</p>
+          <p><strong class="has-text-grey-lighter">Current Price:</strong> The most recent selling price of a stock, currency, commodity, or precious metal that is traded on an exchange and is the most reliable indicator of that security's or asset's present value ; It is also known as the market value.
+          </p>
+          <p><strong class="has-text-grey-lighter">Price Change In 24HR:</strong> The difference between a stock's closing price on a trading day and its closing price on the previous trading day; The price change determinses a company's financial health.</p>
+          <p><strong class="has-text-grey-lighter">Percent Change In 24HR:</strong> The price change of an asset or security represented as a percentage</p>
+          <p><strong class="has-text-grey-lighter">Market Cap:</strong> The total market value of all outstanding shares or how much a company is worth as determined by the stock market; To calculate the market cap, multiply the number of outstanding shares by the current market value of one share. </p>
+          <h4 class="has-text-grey-lighter"> Source: Investopedia</h4>
       </div>
   </section>
 
@@ -82,19 +84,19 @@
                     </div>
                     <div class="dropdown-menu my-auto" id="crypto-dropdown" role="menu">
                       <div class="dropdown-content">
-                        <a href="#" class="dropdown-item" id="Bitcoin">
+                        <a href="#" class="dropdown-item" id="Bitcoin" data="bitcoin">
                           Bitcoin
                         </a>
-                        <a href="#" class="dropdown-item" id="Ethereum">
+                        <a href="#" class="dropdown-item" id="Ethereum" data="ethereum">
                           Ethereum
                         </a>
-                        <a href="#" class="dropdown-item" id="Binance">
+                        <a href="#" class="dropdown-item" id="Binance" data="binance">
                           Binance
                         </a>
-                        <a href="#" class="dropdown-item" id="Solana">
+                        <a href="#" class="dropdown-item" id="Solana" data="solana">
                           Solana
                         </a>
-                        <a href="#" class="dropdown-item" id="XRP">
+                        <a href="#" class="dropdown-item" id="XRP" data="xrp">
                           XRP
                         </a>
                       </div>
@@ -112,7 +114,7 @@
                       </button>
                     </div>
                     <div class="dropdown-menu" id="stock-dropdown" role="menu">
-                      <div class="dropdown-content">
+                      <div class="dropdown-content" id="crypto-btns">
                         <a href="#" class="dropdown-item" id="DOW">
                           THE DOW
                         </a>
@@ -142,30 +144,55 @@
         <h2 class="title is-2 has-text-centered has-text-grey-lighter is-family-monospace">
             CRYPTO NEWS
         </h2>
+         <!--TOOK OUT SUBTITLE SECTIONS FOR CRYPTO EDUCATION & NEWS-->
         <!-- <div class="columns is-mobile">
             <div class="column is-family-monospace" id="crypto-education">
                 <h3 class="subtitle is-4 has-text-centered has-text-grey-lighter">
-                  <!--Crypto News -->
-                <!-- </h3>-->
+                  Crypto News
+                </h3>-->
               
             <!-- </div>
             <div class="column is-family-monospace" id="crypto-news">
                 <h3 class="subtitle is-4 has-text-centered has-text-grey-lighter">
-                    <!-- Crypto News -->
+                    Crypto News
                 </h3>
-          </div>
+          </div> -->
         </div>
     </div>
-</section>
+</section> 
 
  <!--FOOTER-->
-<footer class="footer has-background-grey-lighter pb-2 pt-2">
+<footer class="footer has-background-grey-lighter pb-3 pt-3">
     <div class="content has-text-centered has-background-grey-lighter">
       <p>
-        <strong>Hold On For Dear Life Ape 2022. </strong> <br> <a href="https://"> By The KAVDA Team.</a>
+        <strong>Hold On For Dear Life Ape 2022. </strong> <br> <a href="https://github.com/drkevinfriday/Hold-On-for-Dear-Life-Ape.git"> By The KAVDA Team.<br> <a href="https://bulma.io">
+          <img
+            src="https://bulma.io/images/made-with-bulma.png"
+            alt="Made with Bulma"
+            width="128"
+            height="24">
+        </a></a>
       </p>
     </div>
   </footer>
 
   </body>
 </html>
+
+<!-- Testing For Vanessa: Need To Ask Which Section-->
+<!--
+  <section class="box has-background-link mr-4 ml-4"id="crypto-display">
+    <div>
+      <strong>
+        testing Display
+        <ul class="has-text-justified has-text-grey-lighter">
+          <li class="coinName"></li>
+          <li class="coinPrice"></li>
+          <li class="coinMcap"></li>
+          <li class="coinDayChg"></li>
+          <li class="coinPercentageChange"></li>
+        </ul>
+      </strong>
+    </div>
+  </section>
+-->
