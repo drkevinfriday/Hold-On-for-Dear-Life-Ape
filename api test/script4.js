@@ -6,9 +6,7 @@ const options = {
 	}
 };
 
-fetch('https://quandl1.p.rapidapi.com/datasets/WIKI/FB.json', options)
+fetch('https://quandl1.p.rapidapi.com/datasets/AAPL/FB.json', options)
 	.then(response => response.json())
 	.then(response => console.log(response))
 	.catch(err => console.error(err));
-
-    
