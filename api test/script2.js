@@ -42,31 +42,31 @@ var createobj = function(assetInfo){
     }
 
 
+//displays the results on the page
+var displayArray = function(){
+    //  this confirms that the button works
+    console.log("click works")
 
-    var displayArray = function(){
-        //  this confirms that the button works
-        console.log("click works")
-    
-        // this cycles through the coin array as a test
-        for(var i=0; i< stockArray.length; i++){
-            console.log(stockArray[i])
-        }
-    
-        // once the button is pressed the info from the array based on the index is displayed on the screen
-        // currently the index is 0 or just bitcoin  we need a conditional statment made to set the index based on the user selection from the user select function
-        //  we would have to make a button for each coin doing it this way
-        stockNameEl.textContent=("Asset Name: " + stockArray[0].name);
-        stockPriceEl.textContent=("Price: " + stockArray[0].price);
-        stockMarketcapEl.textContent=("Market cap: " + stockArray[0].marketCap)
-        stockDailyChgEl.textContent=("Daily Change: " + stockArray[0].dailyChg)
-        stockDailyPercentEl.textContent=("Daily % Change: " + stockArray[0].dailyChgPer)
-    
+    // this cycles through the coin array as a test
+    for(var i=0; i< stockArray.length; i++){
+        console.log(stockArray[i])
     }
-    // this function was planned to be used to return selection from the drop down menu 
-    // that selection would then be sent to the display function to display the choosen coin.
-    var userSelect  = function(){
-        
-    }
+
+    // once the button is pressed the info from the array based on the index is displayed on the screen
+    // currently the index is 0 or just bitcoin  we need a conditional statment made to set the index based on the user selection from the user select function
+    //  we would have to make a button for each coin doing it this way
+    stockNameEl.textContent=("Asset Name: " + stockArray[0].name);
+    stockPriceEl.textContent=("Price: " + stockArray[0].price);
+    stockMarketcapEl.textContent=("Market cap: " + stockArray[0].marketCap)
+    stockDailyChgEl.textContent=("Daily Change: " + stockArray[0].dailyChg)
+    stockDailyPercentEl.textContent=("Daily % Change: " + stockArray[0].dailyChgPer)
+
+}
+// this function was planned to be used to return selection from the drop down menu 
+// that selection would then be sent to the display function to display the choosen coin.
+var userSelect  = function(){
+    
+}
 
 Promise.all([
 	fetch('https://finshorts.p.rapidapi.com/index.php?q=aapl', options),
@@ -93,7 +93,7 @@ Promise.all([
      stockArray.push(createobj(data[i]))
     }
     // the array is only working in side the fetch request
- 
+    
     console.log(stockArray)
 
 
@@ -108,7 +108,7 @@ Promise.all([
 
 
 
-
+// event listners
 showNameEl.addEventListener("click", displayArray)
 
 
