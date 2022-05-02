@@ -125,9 +125,11 @@ fetch('https://coingecko.p.rapidapi.com/coins/markets?vs_currency=usd&page=1&per
 		// click event
 		showNameEl.addEventListener("click", displayArray)
 
+		// TESTING HERE: CODE WORKS ON BUTTON CLICK 
 		
 // function displaying crypto info 
-		// TESTING HERE: CODE WORKS ON BUTTON CLICK 
+// added parameters to function to display corresponding info 
+
 var displayCrypto = function(coinArray, [i]) {
 	//console.log("TESTING");
 	coinNameEl.textContent=("Asset Name: " + coinArray[i].name);
@@ -140,7 +142,9 @@ var displayCrypto = function(coinArray, [i]) {
 // handles the click event for crypto 
 
 var handleBtnClick = function(event) {
+	// used data attribute to find corresponding btn click 
 	var data = event.target.getAttribute("data");
+	// conditional statements to run function 
 		if (data == 'bitcoin') {
   		console.log("TESTING CLICK 1")
   		displayCrypto(coinArray, [0]);
