@@ -17,7 +17,7 @@ const options = {
 
 
 // creates an object array for the stock api
-var createobj = function(assetInfo){
+var createobjStock = function(assetInfo){
 
     // create an object for api call info
     
@@ -64,9 +64,7 @@ var displayArray = function(){
 }
 // this function was planned to be used to return selection from the drop down menu 
 // that selection would then be sent to the display function to display the choosen coin.
-var userSelect  = function(){
-    
-}
+
 
 Promise.all([
 	fetch('https://finshorts.p.rapidapi.com/index.php?q=aapl', options),
@@ -90,7 +88,7 @@ Promise.all([
     // creates an object array with the api stock calls
     
     for (var i = 0; i < data.length; i++){
-     stockArray.push(createobj(data[i]))
+     stockArray.push(createobjStock(data[i]))
     }
     // the array is only working in side the fetch request
     
