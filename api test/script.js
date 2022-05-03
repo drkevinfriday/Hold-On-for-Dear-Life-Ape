@@ -5,7 +5,7 @@ var marketcapEl = document.querySelector(".coinMcap")
 var dailyChgEl = document.querySelector(".coinDayChg")
 var DailyPercentEl = document.querySelector(".coinPrecentChange")
 var showNameEl = document.querySelector(".showName")
-
+var cryptoBtnsEl = document.querySelector("#crypto-btns")
 
 
 //list of arrays
@@ -126,7 +126,172 @@ fetch('https://coingecko.p.rapidapi.com/coins/markets?vs_currency=usd&page=1&per
 		
 	});
 
+//Dom elements
+var stockNameEl = document.querySelector(".stockName")
+var stockPriceEl = document.querySelector(".stockPrice")
+var stockMarketcapEl = document.querySelector(".stockMcap")
+var stockDailyChgEl = document.querySelector(".stockDayChg")
+var stockDailyPercentEl = document.querySelector(".stockPrecentChange")
+var showNameEl = document.querySelector(".showName")
+var stockArray = [];
 
+const optionsStock = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Host': 'finshorts.p.rapidapi.com',
+		'X-RapidAPI-Key': '3f322a173bmshcf96baf9a457488p1812bajsn8e668a882dbd'
+	}
+};
+
+
+// creates an object array for the stock api
+var createobjStock = function(assetInfo){
+
+    // create an object for api call info
+    
+    
+    
+    
+    let myObject= {}
+    
+        // this sets the  new object values 
+        myObject.name = assetInfo.data.companyName;
+        myObject.price = assetInfo.data.latestPrice;
+        myObject.dailyChgPer = assetInfo.data.changePercent
+        myObject.dailyChg = assetInfo.data.change;
+        myObject.marketCap = assetInfo.data.marketCap;
+    
+    
+        // stockArray.push(myObject)
+        // this returns the object to calling function to be pushed up to the stock array.
+        return myObject
+    
+    
+    }
+
+
+//displays the results on the page
+var displayArray = function(){
+    //  this confirms that the button works
+    console.log("click works")
+
+    // this cycles through the coin array as a test
+    for(var i=0; i< stockArray.length; i++){
+        console.log(stockArray[i])
+    }
+
+    // once the button is pressed the info from the array based on the index is displayed on the screen
+    // currently the index is 0 or just bitcoin  we need a conditional statment made to set the index based on the user selection from the user select function
+    //  we would have to make a button for each coin doing it this way
+    stockNameEl.textContent=("Asset Name: " + stockArray[0].name);
+    stockPriceEl.textContent=("Price: " + stockArray[0].price);
+    stockMarketcapEl.textContent=("Market cap: " + stockArray[0].marketCap)
+    stockDailyChgEl.textContent=("Daily Change: " + stockArray[0].dailyChg)
+    stockDailyPercentEl.textContent=("Daily % Change: " + stockArray[0].dailyChgPer)
+
+}
+// this function was planned to be used to return selection from the drop down menu 
+// that selection would then be sent to the display function to display the choosen coin.
+
+
+Promise.all([
+	fetch('https://finshorts.p.rapidapi.com/index.php?q=aapl', optionsStock),
+	fetch('https://finshorts.p.rapidapi.com/index.php?q=Tsla', optionsStock),
+    fetch('https://finshorts.p.rapidapi.com/index.php?q=dow', optionsStock),
+    fetch('https://finshorts.p.rapidapi.com/index.php?q=amzn', optionsStock),
+    fetch('https://finshorts.p.rapidapi.com/index.php?q=sp', optionsStock),
+
+
+]).then(function (responses) {
+	// Get a JSON object from each of the responses
+	return Promise.all(responses.map(function (response) {
+		return response.json();
+	}));
+}).then(function (data) {
+	// Log the data to the console
+	// You would do something with both sets of data here
+
+
+	
+    // creates an object array with the api stock calls
+    
+    for (var i = 0; i < data.length; i++){
+     stockArray.push(createobjStock(data[i]))
+    }
+    // the array is only working in side the fetch request
+    
+    console.log(stockArray)
+
+
+}).catch(function (error) {
+	// if there's an error, log it
+	console.log(error);
+});
+
+// event listners
+showNameEl.addEventListener("click", displayArray)
+
+
+// function to display crypto info
+var displayCrypto = function(coinArray, [i]) {
+	//console.log("TESTING");
+coinNameEl.textContent=("Asset Name: " + coinArray[i].name);
+PriceEl.textContent=("Price: " + coinArray[i].price);
+marketcapEl.textContent=("Market cap: " + coinArray[i].marketCap)
+dailyChgEl.textContent=("Daily Change: " + coinArray[i].dailyChg)
+DailyPercentEl.textContent=("Daily % Change: " + coinArray[i].dailyChgPer)   
+};
+
+var handleBtnClick = function(event) {
+var data = event.target.getAttribute("data");
+if (data == 'bitcoin') {
+  console.log("TESTING CLICK 1")
+  displayCrypto(coinArray, [0]);
+}
+if (data == 'ethereum') {
+  displayCrypto(coinArray, [1]);
+  console.log("TESTING CLICK 2");
+}
+if (data == 'binance') {
+  displayCrypto(coinArray, [2]);
+  console.log("TESTING CLICK 3");
+}
+if (data == 'xrp') {
+  displayCrypto(coinArray, [3]);
+  console.log("TESTING CLICK 4");
+}
+if (data == 'solana') {
+  displayCrypto(coinArray, [4]);
+  console.log("TESTING CLICK 5");
+}
+}
+
+cryptoBtnsEl.addEventListener("click", handleBtnClick);
+
+//function to display stock info 
+	// TESTING 
+	var displayStock = function(stockArray, [i]) {
+		stockNameEl.textContent=("Asset Name: " + stockArray[i].name);
+		stockPriceEl.textContent=("Price: " + stockArray[i].price);
+		stockMarketcapEl.textContent=("Market cap: " + stockArray[i].marketCap)
+		stockDailyChgEl.textContent=("Daily Change: " + stockArray[i].dailyChg)
+		stockDailyPercentEl.textContent=("Daily % Change: " + stockArray[i].dailyChgPer)
+	};
+	
+	
+	
+	var handleStockBtn = function(event) {
+		var data = event.target.getAttribute("data");
+	if (data == 'apple') {
+		console.log("TESTING APPLE CLICK")
+		displayStock(stockArray, [0]);
+	}
+	if (data == 'tesla') {
+		console.log("TESTING TESLA CLICK")
+		displayStock(stockArray, [1]);
+	}
+	}
+	stockBtnsEl.addEventListener("click", handleStockBtn);
 
 
 
