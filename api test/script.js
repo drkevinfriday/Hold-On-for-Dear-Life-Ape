@@ -284,9 +284,11 @@ cryptoBtnsEl.addEventListener("click", handleBtnClick);
 		var data = event.target.getAttribute("data");
 	if (data == 'apple') {
 		console.log("TESTING APPLE CLICK")
+		displayStock(stockArray, [0]);
 	}
 	if (data == 'tesla') {
 		console.log("TESTING TESLA CLICK")
+		displayStock(stockArray, [1]);
 	}
 	}
 	stockBtnsEl.addEventListener("click", handleStockBtn);
