@@ -5,7 +5,7 @@ var marketcapEl = document.querySelector(".coinMcap")
 var dailyChgEl = document.querySelector(".coinDayChg")
 var DailyPercentEl = document.querySelector(".coinPrecentChange")
 var showNameEl = document.querySelector(".showName")
-
+var cryptoBtnsEl = document.querySelector("#crypto-btns")
 
 
 //list of arrays
@@ -267,6 +267,29 @@ if (data == 'solana') {
 }
 
 cryptoBtnsEl.addEventListener("click", handleBtnClick);
+
+//function to display stock info 
+	// TESTING 
+	var displayStock = function(stockArray, [i]) {
+		stockNameEl.textContent=("Asset Name: " + stockArray[i].name);
+		stockPriceEl.textContent=("Price: " + stockArray[i].price);
+		stockMarketcapEl.textContent=("Market cap: " + stockArray[i].marketCap)
+		stockDailyChgEl.textContent=("Daily Change: " + stockArray[i].dailyChg)
+		stockDailyPercentEl.textContent=("Daily % Change: " + stockArray[i].dailyChgPer)
+	};
+	
+	
+	
+	var handleStockBtn = function(event) {
+		var data = event.target.getAttribute("data");
+	if (data == 'apple') {
+		console.log("TESTING APPLE CLICK")
+	}
+	if (data == 'tesla') {
+		console.log("TESTING TESLA CLICK")
+	}
+	}
+	stockBtnsEl.addEventListener("click", handleStockBtn);
 
 
 
