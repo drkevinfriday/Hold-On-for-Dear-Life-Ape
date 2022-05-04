@@ -123,7 +123,7 @@ var stockNameEl = document.querySelector(".stockName")
 var stockPriceEl = document.querySelector(".stockPrice")
 var stockMarketcapEl = document.querySelector(".stockMcap")
 var stockDailyChgEl = document.querySelector(".stockDayChg")
-var stockDailyPercentEl = document.querySelector(".stockPrecentChange")
+var stockDailyPercentEl = document.querySelector(".stockPercentChange")
 var showNameEl = document.querySelector(".showName")
 var stockArray = [];
 
