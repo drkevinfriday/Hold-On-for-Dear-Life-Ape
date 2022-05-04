@@ -4,7 +4,7 @@ var PriceEl = document.querySelector(".coinPrice")
 var marketcapEl = document.querySelector(".coinMcap")
 var dailyChgEl = document.querySelector(".coinDayChg")
 var DailyPercentEl = document.querySelector(".coinPercentChange")
-var showNameEl = document.querySelector(".showName")
+
 
 //DOM elements to display stock & crypto info
 var cryptoBtnsEl = document.querySelector("#crypto-btns")
@@ -109,11 +109,7 @@ fetch('https://coingecko.p.rapidapi.com/coins/markets?vs_currency=usd&page=1&per
 		
 		//test the array at the end
 		console.log(coinArray)
-	
-		
-		
-		// click event
-		showNameEl.addEventListener("click", displayArray)
+
 		
 		
 	});
@@ -124,7 +120,6 @@ var stockPriceEl = document.querySelector(".stockPrice")
 var stockMarketcapEl = document.querySelector(".stockMcap")
 var stockDailyChgEl = document.querySelector(".stockDayChg")
 var stockDailyPercentEl = document.querySelector(".stockPercentChange")
-var showNameEl = document.querySelector(".showName")
 var stockArray = [];
 
 const optionsStock = {
@@ -219,9 +214,6 @@ Promise.all([
 	// if there's an error, log it
 	console.log(error);
 });
-
-// event listners
-showNameEl.addEventListener("click", displayArray)
 
 
 // function to display crypto info
