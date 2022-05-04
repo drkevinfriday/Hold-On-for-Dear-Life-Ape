@@ -5,28 +5,20 @@ var marketcapEl = document.querySelector(".coinMcap")
 var dailyChgEl = document.querySelector(".coinDayChg")
 var DailyPercentEl = document.querySelector(".coinPrecentChange")
 var showNameEl = document.querySelector(".showName")
-var cryptoBtnsEl = document.querySelector("#crypto-btns")
 
+//DOM elements to display stock & crypto info
+var cryptoBtnsEl = document.querySelector("#crypto-btns")
+var stockBtnsEl = document.querySelector("#stock-btns")
 
 //list of arrays
 var coinArray = [];
 
 var testArray = [];
 
-
-
-
-
-
 // this function creates objcts from the api call and pushes them to the coin array
-
 var createobj = function(assetInfo){
 
 // create an object for api call info
-
-
-
-
 let myObject= {}
 
 	// this sets the  new object values 
@@ -209,7 +201,7 @@ Promise.all([
 	}));
 }).then(function (data) {
 	// Log the data to the console
-	// You would do something with both sets of data here
+	
 
 
 	
@@ -278,8 +270,6 @@ cryptoBtnsEl.addEventListener("click", handleBtnClick);
 		stockDailyPercentEl.textContent=("Daily % Change: " + stockArray[i].dailyChgPer)
 	};
 	
-	
-	
 	var handleStockBtn = function(event) {
 		var data = event.target.getAttribute("data");
 	if (data == 'apple') {
@@ -289,6 +279,18 @@ cryptoBtnsEl.addEventListener("click", handleBtnClick);
 	if (data == 'tesla') {
 		console.log("TESTING TESLA CLICK")
 		displayStock(stockArray, [1]);
+	}
+	if (data == 'dow') {
+		console.log("TESTING THE DOW CLICK")
+		displayStock(stockArray, [2]);
+	}
+	if (data == 'amazon') {
+		console.log("TESTING AMAZON CLICK")
+		displayStock(stockArray, [3]);
+	}   
+	if (data == 's&p') {
+		console.log("TESTING S&P CLICK")
+		displayStock(stockArray, [4]);
 	}
 	}
 	stockBtnsEl.addEventListener("click", handleStockBtn);
