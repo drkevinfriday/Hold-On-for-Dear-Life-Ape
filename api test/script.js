@@ -3,7 +3,7 @@ var coinNameEl = document.querySelector(".coinName")
 var PriceEl = document.querySelector(".coinPrice")
 var marketcapEl = document.querySelector(".coinMcap")
 var dailyChgEl = document.querySelector(".coinDayChg")
-var DailyPercentEl = document.querySelector(".coinPrecentChange")
+var DailyPercentEl = document.querySelector(".coinPercentChange")
 var showNameEl = document.querySelector(".showName")
 
 //DOM elements to display stock & crypto info
