@@ -180,14 +180,67 @@
     <div class="container">
         <h2 class="title is-2 has-text-centered has-text-grey-lighter is-family-monospace">
             CRYPTO NEWS
-        </h2>
+          
+            <script>
+
+              function getNews(){
+               const options = {
+     method: 'GET',
+     headers: {
+       'X-RapidAPI-Host': 'crypto-news-live3.p.rapidapi.com',
+       'X-RapidAPI-Key': 'b25265300amsh7ebdac809f3a03cp198da9jsne8a87b529796'
+     }
+   };
+   
+   fetch('https://crypto-news-live3.p.rapidapi.com/news?rapidapi-key=b25265300amsh7ebdac809f3a03cp198da9jsne8a87b529796')
+   .then(function (response) {
+                   return response.json();
+               })
+               .then(function (data) {
+                   appendData(data);
+               })
+               .catch(function (err) {
+                   console.log('error: ' + err);
+               });
+           function appendData(data) {
+               var mainContainer = document.getElementById("myData");
+               for (var i = 0; i < 1; i++) {
+                   var div = document.createElement("div");
+                   div.innerHTML = 'Source: ' + data[i].source + ' ';
+                   mainContainer.appendChild(div);
+               }
+               var mainContainer = document.getElementById("myData2");
+               for (var i = 0; i < 1; i++) {
+                   var div = document.createElement("div");
+                   div.innerHTML = '' + data[i].title + ' ';
+                   mainContainer.appendChild(div);
+               }
+               var mainContainer = document.getElementById("myData3");
+               for (var i = 0; i < 1; i++) {
+                   var div = document.createElement("div");
+                   div.innerHTML = ' ' + data[i].url + ' ';
+                   mainContainer.appendChild(div);
+               }
+           }
+         }
+   </script>
+         
+         <button onclick="getNews()">Get News </button>
+         <div id="myData" style="color:white;"> <br>
+           <div id="myData3" style="cursor:pointer">
+             <div id="myData2">
+           
+   
+         
+            
+            <!-- </h2>
         <ul class="has-text-grey-lighter is-family-monospace is-size-5">
           
           <a class="box" href="https://cryptonews.com/" target="blank"> <li>Cryptonews.com</li></a>
           <a class="box" href="https://www.coindesk.com/" target="blank"  > <li>CoinDesk</li></a>
           <a class="box" href="https://cointelegraph.com/" target="blank"> <li>Cointelegraph</li></a>
           
-        </ul>
+        </ul> -->
        
          <!--TOOK OUT SUBTITLE SECTIONS FOR CRYPTO EDUCATION & NEWS-->
         <!-- <div class="columns is-mobile">
