@@ -285,6 +285,52 @@ cryptoBtnsEl.addEventListener("click", handleBtnClick);
 		displayStock(stockArray, [4]);
 	}
 	}
+
+
+
+
+
+              function getNews(){
+               const options = {
+     method: 'GET',
+     headers: {
+       'X-RapidAPI-Host': 'crypto-news-live3.p.rapidapi.com',
+       'X-RapidAPI-Key': 'b25265300amsh7ebdac809f3a03cp198da9jsne8a87b529796'
+     }
+   };
+   
+   fetch('https://crypto-news-live3.p.rapidapi.com/news?rapidapi-key=b25265300amsh7ebdac809f3a03cp198da9jsne8a87b529796')
+   .then(function (response) {
+                   return response.json();
+               })
+               .then(function (data) {
+                   appendData(data);
+               })
+               .catch(function (err) {
+                   console.log('error: ' + err);
+               });
+           function appendData(data) {
+               var mainContainer = document.getElementById("myData");
+               for (var i = 0; i < 2; i++) {
+                   var div = document.createElement("div");
+                   div.innerHTML = 'Source: ' + data[i].source + ' ';
+                   mainContainer.appendChild(div);
+               }
+               var mainContainer = document.getElementById("myData2");
+               for (var i = 0; i < 2; i++) {
+                   var div = document.createElement("div");
+                   div.innerHTML = '' + data[i].title + ' ';
+                   mainContainer.appendChild(div);
+               }
+               var mainContainer = document.getElementById("myData3");
+               for (var i = 0; i < 2; i++) {
+                   var div = document.createElement("div");
+                   div.innerHTML = ' ' + data[i].url + ' ';
+                   mainContainer.appendChild(div);
+               }
+           }
+         }
+
 	stockBtnsEl.addEventListener("click", handleStockBtn);
 
 
