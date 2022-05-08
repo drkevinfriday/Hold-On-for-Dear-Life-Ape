@@ -184,9 +184,9 @@ var displayArray = function(){
 Promise.all([
 	fetch('https://finshorts.p.rapidapi.com/index.php?q=aapl', optionsStock),
 	fetch('https://finshorts.p.rapidapi.com/index.php?q=Tsla', optionsStock),
-    fetch('https://finshorts.p.rapidapi.com/index.php?q=dow', optionsStock),
+    fetch('https://finshorts.p.rapidapi.com/index.php?q=fb', optionsStock),
     fetch('https://finshorts.p.rapidapi.com/index.php?q=amzn', optionsStock),
-    fetch('https://finshorts.p.rapidapi.com/index.php?q=sp', optionsStock),
+    fetch('https://finshorts.p.rapidapi.com/index.php?q=goog', optionsStock),
 
 
 ]).then(function (responses) {
@@ -252,7 +252,7 @@ if (data == 'solana') {
 
 cryptoBtnsEl.addEventListener("click", handleBtnClick);
 
-//function to display stock info 
+//function to display stock info when called
 	// TESTING 
 	var displayStock = function(stockArray, [i]) {
 		stockNameEl.textContent=("Asset Name: " + stockArray[i].name);
@@ -261,7 +261,7 @@ cryptoBtnsEl.addEventListener("click", handleBtnClick);
 		stockDailyChgEl.textContent=("Daily Change: " + stockArray[i].dailyChg)
 		stockDailyPercentEl.textContent=("Daily % Change: " + stockArray[i].dailyChgPer)
 	};
-	
+	// this button displays the stock info
 	var handleStockBtn = function(event) {
 		var data = event.target.getAttribute("data");
 	if (data == 'apple') {
@@ -289,9 +289,9 @@ cryptoBtnsEl.addEventListener("click", handleBtnClick);
 
 
 
-
-              function getNews(){
-               const options = {
+// news api
+function getNews(){
+const options = {
      method: 'GET',
      headers: {
        'X-RapidAPI-Host': 'crypto-news-live3.p.rapidapi.com',
