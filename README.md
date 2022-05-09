@@ -38,8 +38,10 @@ Directories
 
 
 ## Deployed Project
-Repo
-* [HOFDLA](https://github.com/drkevinfriday/old-On-for-Dear-Life-Ape)
+* Repo
+[HOFDLA] (https://github.com/drkevinfriday/Hold-On-for-Dear-Life-Ape)
+* Website
+* [HOFDLA](https://drkevinfriday.github.io/Hold-On-for-Dear-Life-Ape/)
 * Full Page
 * ![HOFDLA](./assets/images/Full_Page_Hold-On-for-Dear-Life-Ape-index-html-3png.png)
 
