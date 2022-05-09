@@ -11,8 +11,6 @@ To deploy the website please upload the folder to a webserver to allow user acce
 ## Usage
 This site will used as the main site for Horiseon Seo marketing.
 
-## Horiseon Seo Marketing Notes
-The purpose of improving the Horiseon Seo Marketing website is to get higher rankings on search engines which in turn creates a larger target audience. Improving the accessiblity of website the Horiseon will increase user traffic.
 
 ## Files & directories
 Directories 
